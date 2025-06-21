@@ -1,9 +1,9 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
-import { getButtonColors } from '@/lib/colors';
+import { beverageColors } from '@/lib/colors';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
+  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
 }
@@ -12,14 +12,31 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', loading, children, disabled, ...props }, ref) => {
     const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
 
-    // Sử dụng màu sắc từ file colors.ts tập trung
-    const variantClasses = getButtonColors(variant);
-
     const sizes = {
       sm: 'h-8 px-3 text-sm',
       md: 'h-10 px-4',
       lg: 'h-12 px-6 text-lg'
     };
+
+    // Đồng bộ màu sắc ấm từ beverageColors
+    const variantClasses = (() => {
+      switch (variant) {
+        case 'primary':
+          return `${beverageColors.primary.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
+        case 'secondary':
+          return `${beverageColors.secondary.bg} ${beverageColors.text.textPrimary} ${beverageColors.shadows.sm} ${beverageColors.secondary.hover}`;
+        case 'accent':
+          return `${beverageColors.accent.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
+        case 'outline':
+          return `${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} ${beverageColors.primary.border} border-2 hover:${beverageColors.secondary.bgDark}`;
+        case 'danger':
+          return `bg-red-600 text-white hover:bg-red-700 shadow-md hover:shadow-lg`; // Danger màu đỏ giữ nguyên
+        case 'ghost':
+          return 'text-gray-700 hover:bg-gray-100'; // Ghost giữ nguyên
+        default:
+          return `${beverageColors.primary.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md}`;
+      }
+    })();
 
     return (
       <button
@@ -27,7 +44,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           baseClasses,
           variantClasses,
           sizes[size],
-          'shadow-sm hover:shadow-md', // Thêm shadow cho tất cả button
+          'shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300',
           className
         )}
         ref={ref}

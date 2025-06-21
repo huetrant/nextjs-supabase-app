@@ -1,12 +1,13 @@
 import { HTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import { getCardStyles, beverageColors } from '@/lib/colors';
 
 const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(
-        'rounded-xl border border-gray-200 bg-white shadow-lg hover:shadow-xl transition-shadow duration-200',
+        getCardStyles('primary'),
         className
       )}
       {...props}
@@ -30,7 +31,7 @@ const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingEle
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn('text-lg font-semibold leading-none tracking-tight text-gray-900', className)}
+      className={cn('text-lg font-semibold leading-none tracking-tight', beverageColors.text.textPrimary, className)}
       {...props}
     />
   )
@@ -41,7 +42,7 @@ const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLPara
   ({ className, ...props }, ref) => (
     <p
       ref={ref}
-      className={cn('text-sm text-gray-700', className)}
+      className={cn('text-sm', beverageColors.text.textMuted, className)}
       {...props}
     />
   )

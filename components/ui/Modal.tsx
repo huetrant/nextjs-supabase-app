@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
 import { Button } from './Button';
+import { beverageColors } from '@/lib/colors';
 
 interface ModalProps {
   isOpen: boolean;
@@ -63,14 +64,14 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', className
 
       {/* Modal */}
       <div className={cn(
-        'relative bg-white rounded-lg shadow-xl w-full',
+        `relative ${beverageColors.background.bgMain} rounded-lg shadow-xl w-full border-2 border-[#D2B48C]`,
         sizes[size],
         className
       )}>
         {/* Header */}
         {title && (
-          <div className="flex items-center justify-between p-6 border-b">
-            <h2 className="text-lg font-semibold text-gray-900">
+          <div className={`flex items-center justify-between p-6 border-b border-[#D2B48C]`}>
+            <h2 className={`text-lg font-semibold ${beverageColors.text.textPrimary}`}>
               {title}
             </h2>
             <Button

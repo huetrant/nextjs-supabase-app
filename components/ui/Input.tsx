@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import { beverageColors } from '@/lib/colors';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -16,7 +17,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-gray-900"
+            className={cn(
+              'block text-sm font-medium',
+              error ? beverageColors.states.error.text : beverageColors.text.textPrimary
+            )}
           >
             {label}
           </label>
@@ -24,18 +28,20 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           id={inputId}
           className={cn(
-            'flex h-11 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200',
-            error && 'border-red-500 focus:ring-red-500 focus:border-red-500',
+            'flex h-11 w-full rounded-lg border-2 px-4 py-2 text-sm placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200',
+            error
+              ? `border-red-500 focus:ring-red-500 focus:border-red-500 ${beverageColors.states.error.bg}`
+              : `border-[${beverageColors.primary.main}] bg-[${beverageColors.background.bgMain}] text-[${beverageColors.text.textPrimary}] focus:outline-none focus:ring-2 focus:ring-[${beverageColors.accent.main}] focus:border-[${beverageColors.accent.main}]`,
             className
           )}
           ref={ref}
           {...props}
         />
         {error && (
-          <p className="text-sm text-red-600">{error}</p>
+          <p className={cn('text-sm', beverageColors.states.error.text)}>{error}</p>
         )}
         {helperText && !error && (
-          <p className="text-sm text-gray-500">{helperText}</p>
+          <p className={cn('text-sm', beverageColors.text.textMuted)}>{helperText}</p>
         )}
       </div>
     );

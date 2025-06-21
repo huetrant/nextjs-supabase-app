@@ -7,3 +7,6 @@ export { Badge } from './Badge';
 export { LoadingSpinner } from './LoadingSpinner';
 export { Alert } from './Alert';
 export { Modal } from './Modal';
+export { VariantAttributesTable } from './VariantAttributesTable';
+export { VariantModal } from './VariantModal';
+export { Pagination, usePagination } from './Pagination';

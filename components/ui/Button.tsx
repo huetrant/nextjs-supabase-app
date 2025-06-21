@@ -30,9 +30,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         case 'outline':
           return `${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} ${beverageColors.primary.border} border-2 hover:${beverageColors.secondary.bgDark}`;
         case 'danger':
-          return `bg-red-600 text-white hover:bg-red-700 shadow-md hover:shadow-lg`; // Danger màu đỏ giữ nguyên
+          return `${beverageColors.states.error.bg} ${beverageColors.text.textWhite} hover:bg-[#B22222] ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
         case 'ghost':
-          return 'text-gray-700 hover:bg-gray-100'; // Ghost giữ nguyên
+          return `${beverageColors.text.textMuted} hover:${beverageColors.background.bgSecondary}`;
         default:
           return `${beverageColors.primary.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md}`;
       }

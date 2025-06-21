@@ -1,12 +1,13 @@
 import { HTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import { beverageColors } from '@/lib/colors';
 
 const Table = forwardRef<HTMLTableElement, HTMLAttributes<HTMLTableElement>>(
   ({ className, ...props }, ref) => (
-    <div className="relative w-full overflow-auto rounded-lg border border-gray-200">
+    <div className={`relative w-full overflow-auto rounded-xl border border-[#EEE5DE] ${beverageColors.shadows.sm} ${beverageColors.background.bgMain}`}>
       <table
         ref={ref}
-        className={cn('w-full caption-bottom text-sm bg-white', className)}
+        className={cn('w-full caption-bottom text-sm', className)}
         {...props}
       />
     </div>
@@ -16,7 +17,7 @@ Table.displayName = 'Table';
 
 const TableHeader = forwardRef<HTMLTableSectionElement, HTMLAttributes<HTMLTableSectionElement>>(
   ({ className, ...props }, ref) => (
-    <thead ref={ref} className={cn('bg-gray-50 [&_tr]:border-b border-gray-200', className)} {...props} />
+    <thead ref={ref} className={cn(`bg-gradient-to-r from-[#F4E1D2] to-[#EEE5DE] [&_tr]:border-b border-[#D2B48C]`, className)} {...props} />
   )
 );
 TableHeader.displayName = 'TableHeader';
@@ -48,7 +49,7 @@ const TableRow = forwardRef<HTMLTableRowElement, HTMLAttributes<HTMLTableRowElem
     <tr
       ref={ref}
       className={cn(
-        'border-b border-gray-200 transition-colors hover:bg-blue-50/50 data-[state=selected]:bg-blue-50',
+        'border-b border-[#EEE5DE] transition-all duration-200 hover:bg-gradient-to-r hover:from-[#F4E1D2]/70 hover:to-[#EEE5DE]/70 hover:shadow-sm data-[state=selected]:bg-[#F4E1D2]',
         className
       )}
       {...props}
@@ -62,7 +63,7 @@ const TableHead = forwardRef<HTMLTableCellElement, HTMLAttributes<HTMLTableCellE
     <th
       ref={ref}
       className={cn(
-        'h-12 px-4 text-left align-middle font-semibold text-gray-900 [&:has([role=checkbox])]:pr-0',
+        `h-14 px-6 text-left align-middle font-bold ${beverageColors.text.textSecondary} tracking-wide uppercase text-xs [&:has([role=checkbox])]:pr-0`,
         className
       )}
       {...props}
@@ -75,7 +76,7 @@ const TableCell = forwardRef<HTMLTableCellElement, HTMLAttributes<HTMLTableCellE
   ({ className, ...props }, ref) => (
     <td
       ref={ref}
-      className={cn('p-4 align-middle text-gray-900 [&:has([role=checkbox])]:pr-0', className)}
+      className={cn(`px-6 py-4 align-middle ${beverageColors.text.textPrimary} [&:has([role=checkbox])]:pr-0`, className)}
       {...props}
     />
   )

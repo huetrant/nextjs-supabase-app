@@ -125,6 +125,16 @@
   "variants": {
     "title": "Variants"
   },
+  "orders": {
+    "title": "Order Management",
+    "subtitle": "Track and manage all orders",
+    "orderList": "Order List",
+    "searchPlaceholder": "Search orders...",
+    "orderId": "Order ID",
+    "customer": "Customer",
+    "totalAmount": "Total Amount",
+    "totalOrders": "Total Orders"
+  },
   "status": {
     "pending": "Pending",
     "processing": "Processing",

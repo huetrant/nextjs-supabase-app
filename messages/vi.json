@@ -125,6 +125,16 @@
   "variants": {
     "title": "Biến thể"
   },
+  "orders": {
+    "title": "Quản lý đơn hàng",
+    "subtitle": "Theo dõi và quản lý tất cả đơn hàng",
+    "orderList": "Danh sách đơn hàng",
+    "searchPlaceholder": "Tìm kiếm đơn hàng...",
+    "orderId": "Mã đơn hàng",
+    "customer": "Khách hàng",
+    "totalAmount": "Tổng tiền",
+    "totalOrders": "Tổng đơn hàng"
+  },
   "status": {
     "pending": "Chờ xử lý",
     "processing": "Đang xử lý",

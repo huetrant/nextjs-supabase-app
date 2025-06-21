@@ -181,6 +181,21 @@ export const getBadgeStyles = (variant: 'primary' | 'secondary' | 'accent' | 'su
   }
 };
 
+export const getSelectStyles = (variant: 'primary' | 'secondary' | 'accent' = 'primary') => {
+  const baseStyles = 'w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200';
+
+  switch (variant) {
+    case 'primary':
+      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#D2B48C] focus:ring-[#A0522D] hover:border-[#A0522D]`;
+    case 'secondary':
+      return `${baseStyles} ${beverageColors.background.bgSecondary} ${beverageColors.text.textPrimary} border-[#C1A57B] focus:ring-[#cf9145] hover:border-[#cf9145]`;
+    case 'accent':
+      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#844c18] focus:ring-[#844c18] hover:border-[#844c18]`;
+    default:
+      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#D2B48C] focus:ring-[#A0522D] hover:border-[#A0522D]`;
+  }
+};
+
 // Legacy colors for backward compatibility
 export const colors = {
   primary: {

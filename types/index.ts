@@ -7,6 +7,7 @@ export interface Product {
   link_image?: string;
   categories_id?: string;
   categories?: { name_cat: string; description?: string };
+  created_at?: string;
 }
 
 export interface Category {
@@ -40,8 +41,21 @@ export interface Order {
   status?: string;
   customer_id?: string;
   store_id?: string;
-  customers?: { name: string; location?: string };
+  customers?: { name: string; location?: string; email?: string; phone?: string };
   store?: { name_store: string; address?: string };
+  order_items?: OrderItem[];
+}
+
+export interface OrderItem {
+  id: string;
+  order_id: string;
+  product_id: string;
+  variant_id?: string;
+  quantity: number;
+  unit_price: number;
+  total_price: number;
+  products?: Product;
+  variants?: Variant;
 }
 
 export interface StoreData {

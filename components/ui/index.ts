@@ -1,6 +1,8 @@
 // UI Components Export
 export { Button } from './Button';
 export { Input } from './Input';
+export { Select } from './Select';
+export { CustomSelect } from './CustomSelect';
 export { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from './Card';
 export { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, TableCaption, TableFooter } from './Table';
 export { Badge } from './Badge';

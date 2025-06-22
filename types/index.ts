@@ -19,11 +19,6 @@ export interface Category {
 export interface Customer {
   id: string;
   name: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  city?: string;
-  country?: string;
   sex?: string;
   age?: number;
   location?: string;
@@ -31,21 +26,32 @@ export interface Customer {
   embedding?: string;
   username?: string;
   password?: string;
-  created_at?: string;
 }
 
 export interface Order {
   id: string;
   order_date: string;
   total_amount: number;
-  status?: string;
   customer_id?: string;
+  status?: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
   store_id?: string;
-  customers?: { name: string; location?: string; email?: string; phone?: string };
-  store?: { name_store: string; address?: string };
-  order_items?: OrderItem[];
+  customers?: { name: string; location?: string; sex?: string; age?: number; username?: string };
+  store?: { name_store: string; address?: string; phone?: string; open_close?: string };
+  order_details?: OrderDetail[];
 }
 
+export interface OrderDetail {
+  id: string;
+  order_id: string;
+  variant_id?: string;
+  quantity: number;
+  rate?: number;
+  unit_price: number;
+  products?: Product;
+  variants?: Variant;
+}
+
+// Legacy interface for backward compatibility
 export interface OrderItem {
   id: string;
   order_id: string;
@@ -63,8 +69,6 @@ export interface StoreData {
   name_store: string;
   address?: string;
   phone?: string;
-  email?: string;
-  manager?: string;
   open_close?: string;
 }
 

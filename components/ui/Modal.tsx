@@ -10,7 +10,7 @@ import { beverageColors } from '@/lib/colors';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  title?: string;
+  title?: string | ReactNode;
   children: ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
@@ -71,14 +71,20 @@ export function Modal({ isOpen, onClose, title, children, size = 'md', className
         {/* Header */}
         {title && (
           <div className={`flex items-center justify-between p-6 border-b border-[#D2B48C]`}>
-            <h2 className={`text-lg font-semibold ${beverageColors.text.textPrimary}`}>
-              {title}
-            </h2>
+            <div className="flex-1">
+              {typeof title === 'string' ? (
+                <h2 className={`text-lg font-semibold ${beverageColors.text.textPrimary}`}>
+                  {title}
+                </h2>
+              ) : (
+                title
+              )}
+            </div>
             <Button
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="p-1 h-auto"
+              className="p-1 h-auto ml-4"
             >
               <X className="h-4 w-4" />
             </Button>

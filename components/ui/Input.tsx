@@ -28,10 +28,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           id={inputId}
           className={cn(
-            'flex h-11 w-full rounded-lg border-2 px-4 py-2 text-sm placeholder:text-gray-500 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200',
+            'flex h-11 w-full rounded-lg border-2 px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200',
             error
-              ? `border-red-500 focus:ring-red-500 focus:border-red-500 ${beverageColors.states.error.bg}`
-              : `border-[${beverageColors.primary.main}] bg-[${beverageColors.background.bgMain}] text-[${beverageColors.text.textPrimary}] focus:outline-none focus:ring-2 focus:ring-[${beverageColors.accent.main}] focus:border-[${beverageColors.accent.main}]`,
+              ? 'border-[#CD5C5C] focus:ring-[#CD5C5C] focus:border-[#CD5C5C] bg-red-50 placeholder:text-red-400'
+              : 'border-[#D2B48C] bg-[#FFF8F0] text-[#3E2C1C] focus:outline-none focus:ring-2 focus:ring-[#A0522D] focus:border-[#A0522D] placeholder:text-[#A0522D]/60',
             className
           )}
           ref={ref}

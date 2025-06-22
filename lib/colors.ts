@@ -183,16 +183,17 @@ export const getBadgeStyles = (variant: 'primary' | 'secondary' | 'accent' | 'su
 
 export const getSelectStyles = (variant: 'primary' | 'secondary' | 'accent' = 'primary') => {
   const baseStyles = 'w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:border-transparent transition-all duration-200';
+  const optionStyles = '[&>option]:bg-[#FFF8F0] [&>option]:text-[#3E2C1C] [&>option:hover]:bg-[#F4E1D2] [&>option:checked]:bg-[#A0522D] [&>option:checked]:text-white';
 
   switch (variant) {
     case 'primary':
-      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#D2B48C] focus:ring-[#A0522D] hover:border-[#A0522D]`;
+      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#D2B48C] focus:ring-[#A0522D] hover:border-[#A0522D] ${optionStyles}`;
     case 'secondary':
-      return `${baseStyles} ${beverageColors.background.bgSecondary} ${beverageColors.text.textPrimary} border-[#C1A57B] focus:ring-[#cf9145] hover:border-[#cf9145]`;
+      return `${baseStyles} ${beverageColors.background.bgSecondary} ${beverageColors.text.textPrimary} border-[#C1A57B] focus:ring-[#cf9145] hover:border-[#cf9145] ${optionStyles}`;
     case 'accent':
-      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#844c18] focus:ring-[#844c18] hover:border-[#844c18]`;
+      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#844c18] focus:ring-[#844c18] hover:border-[#844c18] ${optionStyles}`;
     default:
-      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#D2B48C] focus:ring-[#A0522D] hover:border-[#A0522D]`;
+      return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} border-[#D2B48C] focus:ring-[#A0522D] hover:border-[#A0522D] ${optionStyles}`;
   }
 };
 

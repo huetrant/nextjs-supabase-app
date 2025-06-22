@@ -12,9 +12,10 @@ interface VariantModalProps {
   onSave: (variant: Partial<Variant>) => void;
   variant?: Variant | null;
   locale: string;
+  showPrice?: boolean; // New prop to control price field visibility
 }
 
-export function VariantModal({ isOpen, onClose, onSave, variant, locale }: VariantModalProps) {
+export function VariantModal({ isOpen, onClose, onSave, variant, locale, showPrice = true }: VariantModalProps) {
   const [formData, setFormData] = useState<Partial<Variant>>({
     Beverage_Option: '',
     price: 0,
@@ -96,18 +97,20 @@ export function VariantModal({ isOpen, onClose, onSave, variant, locale }: Varia
           </div>
 
           {/* Price */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {locale === 'vi' ? 'Giá (VND)' : 'Price (VND)'}
-            </label>
-            <Input
-              type="number"
-              value={formData.price || 0}
-              onChange={(e) => handleInputChange('price', parseFloat(e.target.value) || 0)}
-              placeholder="0"
-              min="0"
-            />
-          </div>
+          {showPrice && (
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                {locale === 'vi' ? 'Giá (VND)' : 'Price (VND)'}
+              </label>
+              <Input
+                type="number"
+                value={formData.price || 0}
+                onChange={(e) => handleInputChange('price', parseFloat(e.target.value) || 0)}
+                placeholder="0"
+                min="0"
+              />
+            </div>
+          )}
 
           {/* Calories */}
           <div>

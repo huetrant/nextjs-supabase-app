@@ -27,6 +27,7 @@ import {
 interface VariantAttributesTableProps {
   variants: Variant[];
   locale: string;
+  showPrice?: boolean; // New prop to control price column visibility
   onAddVariant?: () => void;
   onEditVariant?: (variant: Variant) => void;
   onDeleteVariant?: (variantId: string) => void;
@@ -92,7 +93,7 @@ const getVitaminColor = (vitamin: number) => {
 type SortField = keyof Variant | 'none';
 type SortDirection = 'asc' | 'desc';
 
-export function VariantAttributesTable({ variants, locale, onAddVariant, onEditVariant, onDeleteVariant }: VariantAttributesTableProps) {
+export function VariantAttributesTable({ variants, locale, showPrice = true, onAddVariant, onEditVariant, onDeleteVariant }: VariantAttributesTableProps) {
   const [sortField, setSortField] = useState<SortField>('none');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
 
@@ -163,16 +164,18 @@ export function VariantAttributesTable({ variants, locale, onAddVariant, onEditV
                 {getSortIcon('Beverage_Option')}
               </button>
             </TableHead>
-            <TableHead className="px-2">
-              <button
-                onClick={() => handleSort('price')}
-                className="flex items-center gap-1 hover:bg-gray-50 p-1 rounded transition-colors text-left w-full justify-start"
-              >
-                <DollarSign className="h-4 w-4 text-green-600 flex-shrink-0" />
-                <span className="whitespace-nowrap">{locale === 'vi' ? 'Giá (VND)' : 'Price (VND)'}</span>
-                {getSortIcon('price')}
-              </button>
-            </TableHead>
+            {showPrice && (
+              <TableHead className="px-2">
+                <button
+                  onClick={() => handleSort('price')}
+                  className="flex items-center gap-1 hover:bg-gray-50 p-1 rounded transition-colors text-left w-full justify-start"
+                >
+                  <DollarSign className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <span className="whitespace-nowrap">{locale === 'vi' ? 'Giá (VND)' : 'Price (VND)'}</span>
+                  {getSortIcon('price')}
+                </button>
+              </TableHead>
+            )}
             <TableHead className="px-2">
               <button
                 onClick={() => handleSort('calories')}
@@ -267,15 +270,17 @@ export function VariantAttributesTable({ variants, locale, onAddVariant, onEditV
               </TableCell>
 
               {/* Price */}
-              <TableCell className="px-2">
-                {variant.price ? (
-                  <span className="font-medium">
-                    {variant.price.toLocaleString()}
-                  </span>
-                ) : (
-                  <span className="text-gray-400">-</span>
-                )}
-              </TableCell>
+              {showPrice && (
+                <TableCell className="px-2">
+                  {variant.price ? (
+                    <span className="font-medium">
+                      {variant.price.toLocaleString()}
+                    </span>
+                  ) : (
+                    <span className="text-gray-400">-</span>
+                  )}
+                </TableCell>
+              )}
 
               {/* Calories */}
               <TableCell className="px-2">

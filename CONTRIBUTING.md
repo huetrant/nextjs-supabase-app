@@ -1,5 +1,7 @@
 # 🤝 Hướng dẫn đóng góp (Contributing Guide)
 
+> **[🇺🇸 English Version](CONTRIBUTING_EN.md)** | **🇻🇳 Tiếng Việt** | **[📖 README](README.md)** | **[📝 Changelog](CHANGELOG.md)**
+
 Cảm ơn bạn quan tâm đến việc đóng góp cho **Store Management System**! Tài liệu này sẽ hướng dẫn bạn cách đóng góp hiệu quả nhất.
 
 ## 📋 Mục lục

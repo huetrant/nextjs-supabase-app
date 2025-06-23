@@ -1,5 +1,7 @@
 # 📝 Changelog
 
+> **[🇺🇸 English Version](CHANGELOG_EN.md)** | **🇻🇳 Tiếng Việt** | **[📖 README](README.md)** | **[🤝 Contributing](CONTRIBUTING.md)**
+
 Tất cả các thay đổi quan trọng của dự án sẽ được ghi lại trong file này.
 
 Format dựa trên [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), và dự án tuân thủ [Semantic Versioning](https://semver.org/spec/v2.0.0.html).

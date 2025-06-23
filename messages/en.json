@@ -60,7 +60,7 @@
     "dashboardReady": "Dashboard ready",
     "justNow": "Just now"
   },
-  "orders": {
+  "orders_old": {
     "title": "Order Management",
     "subtitle": "Manage orders in the system",
     "addOrder": "Add Order",
@@ -93,7 +93,9 @@
     "viewDetails": "View Details",
     "deleteConfirm": "Are you sure you want to delete this product?",
     "imageUrl": "Image URL",
-    "imagePreview": "Image Preview"
+    "imagePreview": "Image Preview",
+    "showing": "showing",
+    "manageProducts": "Manage and organize products"
   },
   "customers": {
     "title": "Customer Management",
@@ -204,20 +206,26 @@
   "orders": {
     "title": "Order Management",
     "subtitle": "Track and manage all orders",
+    "addOrder": "Add Order",
     "orderList": "Order List",
     "searchPlaceholder": "Search orders...",
-    "orderId": "Order ID",
+    "addNewOrder": "Add New Order",
+    "editOrder": "Edit Order",
+    "orderNumber": "Order Number",
     "customer": "Customer",
+    "orderDate": "Order Date",
+    "deleteConfirm": "Are you sure you want to delete this order?",
+    "orderId": "Order ID",
     "totalAmount": "Total Amount",
+    "orderStatus": "Status",
+    "customerInfo": "Customer Information",
+    "storeInfo": "Store Information",
     "totalOrders": "Total Orders",
     "orderDetail": "Order Details",
     "orderDetailSubtitle": "Detailed information about the order",
     "backToOrders": "Back",
     "orderInfo": "Order Information",
     "orderCode": "Order Code",
-    "orderDate": "Order Date",
-    "customerInfo": "Customer Information",
-    "storeInfo": "Store Information",
     "gender": "Gender",
     "age": "Age",
     "username": "Username",
@@ -254,7 +262,9 @@
     "addError": "An error occurred while adding the product",
     "orderNotFound": "Order not found",
     "totalItems": "Total Items",
-    "items": "items"
+    "items": "items",
+    "createOrder": "Create Order",
+    "updateOrder": "Update Order"
   },
   "status": {
     "pending": "Pending",

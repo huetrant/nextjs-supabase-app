@@ -25,6 +25,7 @@
     "no": "Không",
     "confirm": "Xác nhận",
     "close": "Đóng",
+    "back": "Quay lại",
     "optional": "tùy chọn",
     "noDescription": "Không có mô tả",
     "noAddress": "Không có địa chỉ",
@@ -60,7 +61,7 @@
     "dashboardReady": "Trang chủ đã sẵn sàng",
     "justNow": "Vừa xong"
   },
-  "orders": {
+  "orders_old": {
     "title": "Quản lý đơn hàng",
     "subtitle": "Quản lý danh sách đơn hàng trong hệ thống",
     "addOrder": "Thêm đơn hàng",
@@ -93,7 +94,10 @@
     "viewDetails": "Xem chi tiết",
     "deleteConfirm": "Bạn có chắc chắn muốn xóa sản phẩm này?",
     "imageUrl": "Link hình ảnh",
-    "imagePreview": "Xem trước hình ảnh"
+    "imagePreview": "Xem trước hình ảnh",
+    "showing": "hiển thị",
+    "manageProducts": "Quản lý và tổ chức sản phẩm",
+    "totalProducts": "Tổng sản phẩm"
   },
   "customers": {
     "title": "Quản lý khách hàng",
@@ -204,20 +208,26 @@
   "orders": {
     "title": "Quản lý đơn hàng",
     "subtitle": "Theo dõi và quản lý tất cả đơn hàng",
+    "addOrder": "Thêm đơn hàng",
     "orderList": "Danh sách đơn hàng",
     "searchPlaceholder": "Tìm kiếm đơn hàng...",
-    "orderId": "Mã đơn hàng",
+    "addNewOrder": "Thêm đơn hàng mới",
+    "editOrder": "Chỉnh sửa đơn hàng",
+    "orderNumber": "Số đơn hàng",
     "customer": "Khách hàng",
+    "orderDate": "Ngày đặt hàng",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa đơn hàng này?",
+    "orderId": "Mã đơn hàng",
     "totalAmount": "Tổng tiền",
+    "orderStatus": "Trạng thái",
+    "customerInfo": "Thông tin khách hàng",
+    "storeInfo": "Thông tin cửa hàng",
     "totalOrders": "Tổng đơn hàng",
     "orderDetail": "Chi tiết đơn hàng",
     "orderDetailSubtitle": "Thông tin chi tiết về đơn hàng",
     "backToOrders": "Quay lại",
     "orderInfo": "Thông tin đơn hàng",
     "orderCode": "Mã đơn hàng",
-    "orderDate": "Ngày đặt",
-    "customerInfo": "Thông tin khách hàng",
-    "storeInfo": "Thông tin cửa hàng",
     "gender": "Giới tính",
     "age": "Tuổi",
     "username": "Tên đăng nhập",
@@ -254,7 +264,9 @@
     "addError": "Có lỗi xảy ra khi thêm sản phẩm",
     "orderNotFound": "Không tìm thấy đơn hàng",
     "totalItems": "Tổng số lượng",
-    "items": "sản phẩm"
+    "items": "sản phẩm",
+    "createOrder": "Tạo đơn hàng",
+    "updateOrder": "Cập nhật đơn hàng"
   },
   "status": {
     "pending": "Chờ xử lý",

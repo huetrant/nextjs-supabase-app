@@ -143,7 +143,7 @@ export const getCardStyles = (variant: 'primary' | 'secondary' | 'accent' | 'sof
   }
 };
 
-export const getButtonStyles = (variant: 'primary' | 'secondary' | 'accent' | 'outline' = 'primary') => {
+export const getButtonStyles = (variant: 'primary' | 'secondary' | 'accent' | 'outline' | 'success' | 'warning' | 'danger' | 'info' = 'primary') => {
   const baseStyles = 'px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-center';
 
   switch (variant) {
@@ -155,6 +155,14 @@ export const getButtonStyles = (variant: 'primary' | 'secondary' | 'accent' | 'o
       return `${baseStyles} ${beverageColors.accent.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
     case 'outline':
       return `${baseStyles} ${beverageColors.background.bgMain} ${beverageColors.text.textPrimary} ${beverageColors.primary.border} border-2 hover:${beverageColors.secondary.bgDark}`;
+    case 'success':
+      return `${baseStyles} ${beverageColors.states.success.bg} ${beverageColors.text.textWhite} hover:bg-[#7AA67A] ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
+    case 'warning':
+      return `${baseStyles} ${beverageColors.states.warning.bg} ${beverageColors.text.textWhite} hover:bg-[#B8860B] ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
+    case 'danger':
+      return `${baseStyles} ${beverageColors.states.error.bg} ${beverageColors.text.textWhite} hover:bg-[#B22222] ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
+    case 'info':
+      return `${baseStyles} ${beverageColors.highlight.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md} hover:${beverageColors.shadows.lg}`;
     default:
       return `${baseStyles} ${beverageColors.primary.gradient} ${beverageColors.text.textWhite} ${beverageColors.shadows.md}`;
   }
